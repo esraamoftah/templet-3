@@ -1,0 +1,238 @@
+<html>
+    <head>
+        <title>simple xo</title>
+      <style>
+          *{
+              box-sizing: border-box
+          }
+          #A1,#A2,#A3,#A4,#A5,#A6,#A7,#A8,#A9{
+              width:120px;
+              height: 120px;
+              border: 1px solid #333;
+              float: left;
+               margin-bottom: 5px;
+              font-size: 120px;
+              background-color: darkorange;
+              text-align: center;
+           line-height: 80px;
+              color: #fff;
+              font-family: sans-serif;
+              margin-right: 5;
+            
+          }
+          .main{
+                width: 400;
+              height: 400;
+              margin:100  auto;
+              position: relative;
+              
+          }
+          
+          .clear{
+              clear:both
+          }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div     id="A1"  onclick="insert1() ;"></div>
+            <div  id="A2"  onclick="insert2()  ;"></div> 
+            <div     id="A3"  onclick="insert3()  ;"></div>
+            <div    id="A4"  onclick="insert4()  ;" ></div>
+            <div id="A5"  onclick="insert5()  ;"></div>
+            <div     id="A6"  onclick="insert6();"></div>
+            <div   id="A7"  onclick="insert7();"></div>
+            <div       id="A8"     onclick="insert8() ;" ></div>
+            <div     id="A9"  onclick="insert9() ;"></div>
+           
+        </div> 
+         <div class="clear"></div>
+            
+        <script> 
+        var turn=true;
+             function reset(A,b,c){
+               document.getElementById('A'+A).style.color="#000"
+                     document.getElementById('A'+b) .style.color="#000"
+                     document.getElementById('A'+c).style.color="#000"
+                setTimeout(function(){
+                    
+                 location.reload();   
+                },2000)
+            }
+           
+             function checkwinner(){
+                 //check horizontal//
+                if(window.A1.innerHTML== window.A3.innerHTML&&window.A3.innerHTML
+==window.A2.innerHTML&&window.A1.innerHTML!=""){
+                    alert('player '+window.A1.innerHTML +' win the game') 
+                    reset(1,2,3);
+                }
+               if(window.A4.innerHTML== window.A5.innerHTML&&window.A5.innerHTML==window.A6.innerHTML&&window.A6.innerHTML!=""){
+                 alert('player '+window.A4.innerHTML +' wins the game')                    
+      reset(4,5,6);
+
+
+               }   
+                 if(window.A7.innerHTML== window.A8.innerHTML&& window.A8.innerHTML==window.A9.innerHTML&&window.A9.innerHTML!=""){
+       alert('player '+window.A7.innerHTML +' wins the game') 
+                     reset(7,8,9);
+  
+               } 
+                 //check diagonal//
+                 if(window.A1.innerHTML== window.A5.innerHTML&& window.A5.innerHTML==window.A9.innerHTML&&window.A9.innerHTML!=""){
+                 alert('player '+window.A1.innerHTML +' wins the game') 
+        reset(1,5,9);
+
+               }   
+  if(window.A3.innerHTML== window.A5.innerHTML&& window.A7.innerHTML==window.A5.innerHTML&&window.A5.innerHTML!=""){
+                 alert('player '+window.A5.innerHTML +' wins the game') 
+    reset(3,7,5);
+
+               }   
+                // check vertical//
+ if(window.A1.innerHTML== window.A4.innerHTML&& window.A4.innerHTML==window.A7.innerHTML&&window.A4.innerHTML!=""){
+                 alert('player '+window.A4.innerHTML +' wins the game') 
+        reset(1,4,7);
+
+               }   
+  if(window.A2.innerHTML== window.A5.innerHTML&& window.A5.innerHTML==window.A8.innerHTML&&window.A5.innerHTML!=""){
+                 alert('player '+window.A5.innerHTML +' wins the game') 
+        reset(2,5,8);
+
+               }   
+   if(window.A3.innerHTML== window.A6.innerHTML&& window.A6.innerHTML==window.A9.innerHTML&&window.A9.innerHTML!=""){
+                 alert('player '+window.A9.innerHTML +' wins the game') 
+    reset(3,6,9);
+
+               }   
+  
+
+             }
+             
+            function insert1() {
+               
+                           if(turn&& window.A1.innerHTML=="") {
+                               window.A1.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if(window.A1.innerHTML==""){
+                      window.A1.innerHTML="o"; 
+                       turn=true;
+                   }
+                    checkwinner()
+            }
+            
+  function insert2() {
+               
+                           if(turn&& window.A2.innerHTML=="") {
+                               window.A2.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if(window.A2.innerHTML==""){
+                      window.A2.innerHTML="o"; 
+                       turn=true;
+                   }
+                        checkwinner()
+            }
+              function insert3() {
+               
+                           if(turn&& window.A3.innerHTML=="") {
+                               window.A3.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if( window.A3.innerHTML==""){
+                      window.A3.innerHTML="o"; 
+                       turn=true;
+                   }
+         checkwinner()
+            }
+            function insert4() {
+               
+                           if(turn&& window.A4.innerHTML=="") {
+                               window.A4.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if( window.A4.innerHTML==""){
+                      window.A4.innerHTML="o"; 
+                       turn=true;
+                   }
+                    checkwinner()
+            }
+             function insert5() {
+               
+                           if(turn&& window.A5.innerHTML=="") {
+                               window.A5.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if( window.A5.innerHTML==""){
+                      window.A5.innerHTML="o"; 
+                       turn=true;
+                   }
+                    checkwinner()
+            }
+
+             function insert6() {
+               
+                           if(turn&& window.A6.innerHTML=="") {
+                               window.A6.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if( window.A6.innerHTML==""){
+                      window.A6.innerHTML="o"; 
+                       turn=true;
+                   }
+                    checkwinner()
+            }
+            
+             function insert7() {
+               
+                           if(turn&& window.A7.innerHTML=="") {
+                               window.A7.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if(window.A7.innerHTML==""){
+                      window.A7.innerHTML="o"; 
+                       turn=true;
+                   }
+                    checkwinner()
+            }
+            
+             function insert8() {
+               
+                           if(turn&& window.A8.innerHTML=="") {
+                               window.A8.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if( window.A4.innerHTML==""){
+                      window.A8.innerHTML="o"; 
+                       turn=true;
+                   }
+                    checkwinner()
+            }
+            
+             function insert9() {
+               
+                           if(turn&& window.A9.innerHTML=="") {
+                               window.A9.innerHTML="x"; 
+                               turn=!true;
+                           }
+                  
+                   else if( window.A9.innerHTML==""){
+                      window.A9.innerHTML="o"; 
+                       turn=true;
+                   }
+                    checkwinner()
+            }
+
+         
+        </script>
+    </body>
+</html>
